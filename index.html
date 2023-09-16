@@ -15,6 +15,19 @@
             background-attachment: fixed;
         }
     </style>
+    <style>
+        .gold {
+            background-color: gold !important;
+        }
+
+        .silver {
+            background-color: silver !important;
+        }
+
+        .bronze {
+            background-color: #cd7f32 !important; /* Bronze color */
+        }
+    </style>
 </head>
 <body>
     <div class="container mt-5">
@@ -40,10 +53,6 @@
     <script>
         // Hardcoded leaderboard data
         const leaderboardData = [
-            { No: 1, "Name": "Player 1", "Atcoder ID": "player1", Rank: 1 },
-            { No: 2, "Name": "Player 2", "Atcoder ID": "player2", Rank: 2 },
-            { No: 3, Name: "Player 3", "Atcoder ID": "player3", Rank: 3 },
-            // Add more entries as needed
         ];
         // const link="https://github.com/rajb957/sample/blob/main/data.json";
         // set request cors to no-cors
@@ -69,11 +78,28 @@
 
                 // Add classes for top three entries
                 if (index === 0) {
-                    row.classList.add("gold");
+                    // row.addatt;
+                    row.innerHTML = `
+                    <td class="gold">${item["No"]}</td>
+                    <td class="gold">${item["Name"]}</td>
+                    <td class="gold">${item["Atcoder ID"]}</td>
+                    <td class="gold">${item["Rank"]}</td>
+                `;
+                    // row.setAttribute("bgcolor", "#FFD700 !important")
                 } else if (index === 1) {
-                    row.classList.add("silver");
+                    row.innerHTML = `
+                    <td class="silver">${item["No"]}</td>
+                    <td class="silver">${item["Name"]}</td>
+                    <td class="silver">${item["Atcoder ID"]}</td>
+                    <td class="silver">${item["Rank"]}</td>
+                `;
                 } else if (index === 2) {
-                    row.classList.add("bronze");
+                    row.innerHTML = `
+                    <td class="bronze">${item["No"]}</td>
+                    <td class="bronze">${item["Name"]}</td>
+                    <td class="bronze">${item["Atcoder ID"]}</td>
+                    <td class="bronze">${item["Rank"]}</td>
+                `;
                 }
 
                 tbody.appendChild(row);
@@ -85,18 +111,6 @@
     </script>
 
     <!-- Custom CSS for top three entries -->
-    <style>
-        .gold {
-            background-color: gold;
-        }
-
-        .silver {
-            background-color: silver;
-        }
-
-        .bronze {
-            background-color: #cd7f32; /* Bronze color */
-        }
-    </style>
+    
 </body>
 </html>
